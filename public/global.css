@@ -44,3 +44,6 @@ nav a{
     max-width: calc(50% - 1rem);
   }
 }
+footer{
+  margin-left: 1rem;
+}
