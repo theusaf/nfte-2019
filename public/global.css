@@ -40,7 +40,7 @@ nav a{
 }
 @media screen and (max-width: 600px) {
   .box{
-    flex: 50%;
-    max-width: 50%;
+    flex: calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
   }
 }
