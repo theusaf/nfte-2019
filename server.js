@@ -9,9 +9,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const hash = require(path.join(__dirname,"lib","hash.js"));
 const httpServer = http.createServer(app);
-app.use(express.static("public"),{
+app.use(express.static("public",{
   maxAge: "1y"
-});
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
