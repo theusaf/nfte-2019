@@ -5,11 +5,13 @@ const ws = require('ws');
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
-const firebase = require('firebase');
+//const firebase = require('firebase');
 const app = express();
 const hash = require(path.join(__dirname,"lib","hash.js"));
 const httpServer = http.createServer(app);
-app.use(express.static("public"));
+app.use(express.static("public"),{
+  maxAge: "1y"
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -26,4 +28,4 @@ const firebaseConfig = {
   measurementId: "G-16NGQBRXK7"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
