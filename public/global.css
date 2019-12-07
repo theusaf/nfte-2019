@@ -144,6 +144,7 @@ footer{
   left: 0;
   background: white;
   width: 100%;
+  z-index: 10;
 }
 .mobile_menu:checked + label div a{
   flex: 1;
@@ -181,5 +182,11 @@ footer{
   }
   .halfmedia{
     max-width: none;
+  }
+  .media{
+    max-width: 100%;
+  }
+  .media.indent{
+    max-width: calc(100% - 1rem);
   }
 }
