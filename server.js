@@ -14,10 +14,14 @@ app.use(express.static("public",{
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+// 404 Page
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname,"public","404.html"));
+});
 
 httpServer.listen(process.env.PORT || 1910);
 
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "AIzaSyDyAxEc43oDpJms036wVOeKdjvNsQLszvU",
   authDomain: "bepreparedness.firebaseapp.com",
   databaseURL: "https://bepreparedness.firebaseio.com",
@@ -27,5 +31,5 @@ const firebaseConfig = {
   appId: "1:106107649883:web:fece6ab1530c3ee3e8647e",
   measurementId: "G-16NGQBRXK7"
 };
-// Initialize Firebase
-//firebase.initializeApp(firebaseConfig);
+//Initialize Firebase
+firebase.initializeApp(firebaseConfig);*/
