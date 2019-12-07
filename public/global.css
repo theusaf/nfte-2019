@@ -38,7 +38,7 @@ nav a{
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  transition: transform 1s, opacity 1s;
+  transition: transform 1s;
   overflow: auto;
   overflow-x: hidden;
   position: relative;
@@ -53,6 +53,9 @@ nav a{
 }
 .box .desc{
   display: none;
+  box-sizing: border-box;
+  border-left: solid 0.5rem white;
+  border-right: solid 0.5rem white;
 }
 input.hidden:checked + label{
   transform: rotateY(180deg);
@@ -60,7 +63,7 @@ input.hidden:checked + label{
 .box::after{
   content: '';
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -98,9 +101,64 @@ footer{
   padding: 1rem;
   background: #999999;
 }
+.mobile_menu{
+  display: none;
+}
+.mobile_menu + label::before{
+  content: '';
+  width: 3rem;
+  height: 100%;
+  position: absolute;
+  background-image: url(/images/menu.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 1s ease-out;
+}
+.mobile_menu + label{
+  display: none;
+  width: 100%;
+  height: 3rem;
+  background-color: #0099ff;
+  position: relative;
+}
+.mobile_menu + label h2{
+  font-size: 1.75rem;
+  color: white;
+  text-shadow: 0.1rem 0.1rem grey;
+}
+.mobile_menu + label img{
+  width: 3rem;
+  margin-left: 3.25rem;
+}
+.mobile_menu:checked + label::before{
+  transform: rotateZ(180deg);
+}
+.mobile_menu:checked + label div{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  background: white;
+  width: 100%;
+}
+.mobile_menu:checked + label div a{
+  flex: 1;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
 @media screen and (max-width: 600px) {
   .box{
-    flex: calc(50% - 1rem);
-    max-width: calc(50% - 1rem);
+    flex: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+  }
+  .mobile_menu + label{
+    display: flex;
+    align-items: center;
+  }
+  nav{
+    display: none !important;
   }
 }
