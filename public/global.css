@@ -166,7 +166,7 @@ footer{
   float: left;
 }
 .halfmedia{
-  max-width: calc(100% - 25rem);
+  width: calc(100% - 25rem);
 }
 @media screen and (max-width: 600px) {
   .box{
@@ -181,7 +181,7 @@ footer{
     display: none !important;
   }
   .halfmedia{
-    max-width: none;
+    width: auto;
   }
   .media{
     max-width: 100%;

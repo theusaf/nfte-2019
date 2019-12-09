@@ -27,7 +27,7 @@ app.get("/weather",(req,res)=>{
           error: "Weather service error"
         }));
       }
-      res.send(JSON.stringify(resp,null,1));
+      res.send(JSON.stringify(resp,null,2));
     });
   }else{
     res.send(JSON.stringify({
