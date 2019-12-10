@@ -36,7 +36,6 @@ nav a{
   flex: calc(33.333% - 1rem);
   max-width: calc(33.333% - 1rem);
   height: 20rem;
-  background: white;
   margin: 0.5rem;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -191,6 +190,13 @@ footer{
   }
 }
 @media (prefers-color-scheme: dark) {
+  body{
+    background: #444444;
+    color: #eeeeee;
+  }
+  .box{
+    background: #999999;
+  }
   input.hidden:checked + label .desc{
     color: white;
     background: black;
@@ -202,9 +208,6 @@ footer{
   }
   input.hidden:checked + label .desc a:visited{
     color: #999999;
-  }
-  body{
-    background: #444444;
   }
   nav,.box h2{
     background: #999999;
