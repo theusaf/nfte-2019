@@ -63,6 +63,14 @@ async function renderWeatherForecast(){
 }
 renderWeatherForecast();
 
+setInterval(()=>{
+  const rm = document.getElementById("image").querySelectorAll("div, h2");
+  rm.forEach(o=>{o.outerHTML = "";});
+  const rm2 = document.getElementById("forecast");
+  rm2.innerHTML = "";
+  renderWeatherForecast();
+},60*1000);
+
 function ForecastHTML(data){
   let str = "";
   for(let i = 0; i<data.length;++i){
